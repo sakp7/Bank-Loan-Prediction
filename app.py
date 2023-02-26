@@ -63,7 +63,7 @@ import streamlit as st
 
 
 def run():
-    st.title("Hello")
+    
     st.title("Bank Loan Prediction using Machine Learning")
 
     ## Account No
