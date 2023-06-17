@@ -1,20 +1,21 @@
+# importing neccesary packages
 import numpy as np
 import pandas as pd
-
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn import metrics
+import streamlit as st
 
+# Uploading Dataset
 df = pd.read_csv("train.csv")
 df.head()
-
+# Data Preprocessing 
+#Filling up the missing data
 df['LoanAmount'] = df['LoanAmount'].fillna(df['LoanAmount'].mean())
 df['Credit_History'] = df['Credit_History'].fillna(df['Credit_History'].median())
 df.dropna(inplace=True)
 print(df.isnull().sum())
 print(df.shape)
-
-
 df['Loan_Status'].replace('Y',1,inplace=True)
 df['Loan_Status'].replace('N',0,inplace=True)
 
@@ -55,7 +56,6 @@ model.fit(X_train,y_train)
 lr_prediction = model.predict(X_test)
 print('Logistic Regression accuracy = ', metrics.accuracy_score(lr_prediction,y_test))
 
-import streamlit as st
 
 
 
@@ -133,9 +133,10 @@ def run():
             duration = 360
         if dur == 4:
             duration = 480
+        
         features = [[gen, mar, dep, edu, emp, mon_income, co_mon_income, loan_amt, duration, cred, prop]]
         print(features)
-        prediction = model.predict(features)
+        prediction = model.predict(features)        # Making the prediction
         lc = [str(i) for i in prediction]
         ans = int("".join(lc))
         if ans == 0:
