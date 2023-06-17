@@ -82,7 +82,7 @@ def run():
     mar_options = list(range(len(mar_display)))
     mar = st.selectbox("Marital Status", mar_options, format_func=lambda x: mar_display[x])
 
-    ## No of dependets
+    ## No of dependents
     dep_display = ('No','One','Two','More than Two')
     dep_options = list(range(len(dep_display)))
     dep = st.selectbox("Dependents",  dep_options, format_func=lambda x: dep_display[x])
