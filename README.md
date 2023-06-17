@@ -1,4 +1,6 @@
 # Bank-Loan-Prediction
+<img src="bank.png">
+
 ## This project is built to find whether a person gets a loan or not based on some of his attibutes.
 
 ## Algorithm: Logistic Regression
@@ -15,4 +17,3 @@
 9. Loan Amount
 10. Loan Duration
 
-<img src="bank.png">
